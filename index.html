@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>User Registration Form</title>
+	<link rel="stylesheet" href="index.css"
+		type="text/css"/>
+
+<script>
+		function validate(){
+			var firstname   = document.stud_form.firstname;
+			var lastname  = document.stud_form.lastname;
+			var contactnumber = document.stud_form.contactnumber;
+			var address= document.stud_form.address;
+			var email  = document.stud_form.email;
+			var usertype = document.stud_form.usertype;
+			var paymenttype = document.stud_form.paymenttype;
+			
+
+			if (firstname.value.length <=0){
+				alert("First Name is required");
+				firstname.focus();
+				return false;
+			}
+			if (lastname.value.length <=0){
+				alert("Last Name is required");
+				lastname.focus();
+				return false;
+			}
+			if (contactnumber.value.length <=0){
+				alert("Mobile is required");
+				contactnumber.focus();
+				return false;
+			}
+			if (address.value.length <=0){
+				alert("Address is required");
+				address.focus();
+				return false;
+			}
+			if (email.value.length <=0){
+				alert("Email is required");
+				email.focus();
+				return false;
+			}
+			if (usertype.value.length <=0){
+				alert("User Type is required");
+				usertype.focus();
+				return false;
+			}
+			if (paymenttype.value =="Select Payment"){
+				alert("Payment is required");
+				ptype.focus();
+				return false;
+			}
+			else
+			{
+			alert('Form Succesfully Submitted');
+			window.location.reload()
+			return true;
+			}
+			
+			
+		return false;
+			
+		}
+			
+	</script>		
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="header">
+		<h2>Enter User Informations</h2>
+		</div>
+	<form id="form" class="form" action="" name="stud_form" onsubmit="return validate()">
+		<div class="form-control">
+			<label for="firstname">First Name</label>
+			<input type="text"  placeholder="Type first name here" name="firstname" id="firstname" />
+			<i class="fas fa-check-circle"></i>
+			<i class="fas fa-exclamation-circle"></i>
+			<small>Error message</small>
+		</div>
+		
+		<div class="form-control"style="display:block;width: 300px;height:40px;border-radius: 3px;outline: 0;padding: 7px;
+			position: absolute; right: 80px;top:110px"><!--"position:relative; left:80px; top:2px;"-->
+			<label for="email">Email Address</label>
+			<input type="email" placeholder="Type email address here" name="email" id="email" />
+			<i class="fas fa-check-circle"></i>
+			<i class="fas fa-exclamation-circle"></i>
+			<small>Error message</small>
+		</div>
+		
+		<div class="form-control">
+			<label for="lastname">Last Name</label>
+			<input type="text" placeholder="Type Last name here" name="lastname" id="lastname" />
+			<i class="fas fa-check-circle"></i>
+			<i class="fas fa-exclamation-circle"></i>
+			<small>Error message</small>
+		</div>
+		
+		<div style="display:block;width: 300px;height:40px;border-radius: 3px;outline: 0;padding: 7px;
+			position: absolute; right: 80px;top:210px">
+			 <label for="usertype"style="font-size:14pt;font-weight:bold"> User Type </label><br><br>
+			 <input type="radio" id="school" name="usertype" value="school" />School &nbsp
+			 <input type="radio" id="university" name="usertype" value="university" />University &nbsp
+			 <input type="radio" id="employee" name="usertype" value="employee" />Employee
+		</div>
+		<div class="form-control">	 
+			 <i class="fas fa-check-circle"></i>
+			 <i class="fas fa-exclamation-circle"></i>
+			 <small>Error message</small>
+		
+		</div>
+		
+		<div class="form-control" style="display:block;width: 300px;height:40px;border-radius: 3px;outline: 0;padding: 7px;
+			position: absolute; left:52px ;top:330px">
+			<label for="contactnumber">Contact Number</label><br>
+			<input type="text" placeholder="Type contact number here" name="contactnumber" id="contactnumber" />
+			<i class="fas fa-check-circle"></i>
+			<i class="fas fa-exclamation-circle"></i>
+			<small>Error message</small>
+		</div>
+		
+		<div class="form-control"><br><br><br>
+		<label for= "address"> Address</label><br>
+			<textarea  value="address" name="address" id="address"placeholder="Type address here"></textarea><br>
+			<i class="fas fa-check-circle"></i>
+			<i class="fas fa-exclamation-circle"></i>
+			<small>Error message</small>
+		</div>
+		
+		<div class="form-control"style="display:block;position:absolute; right:0.5px;top:330px">
+		 <label for="paymenttype" id="paymenttype"> Payment Type </label><br>
+			<select id="pt" name="paymenttype">
+				<option disbled="Select Payment" >Select Payment</option>
+				<option value="Full Payment">Full Payment</option>
+				<option value="Half payment">Half Payment</option>
+					
+			</select>
+			<i class="fas fa-check-circle"></i>
+			<i class="fas fa-exclamation-circle"></i>
+			<small>Error message</small>
+		</div>
+		<button type="submit" name="submit" value="Submit">Submit</button>
+		
+	   
+	</form>
+    </div>
+
+</body>
+</html>
